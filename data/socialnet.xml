@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  An excerpt of an egocentric social network  -->
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<graph edgedefault="undirected">
+ 
+<!-- data schema -->
+<key id="name" for="node" attr.name="name" attr.type="string"/>
+<key id="gender" for="node" attr.name="gender" attr.type="string"/>
+  
+<!-- nodes -->  
+<node id="1">
+ <data key="name">Jeff</data>
+ <data key="gender">M</data>
+ </node>
+<node id="2">
+ <data key="name">Ed</data>
+ <data key="gender">M</data>
+</node>
+<node id="3">
+ <data key="name">Christiaan</data>
+ <data key="gender">M</data>
+</node>
+<node id="4">
+ <data key="name">Emily</data>
+ <data key="gender">F</data>
+</node>
+<node id="5">
+ <data key="name">Adam</data>
+ <data key="gender">M</data>
+</node>
+<node id="6">
+ <data key="name">Cynthia</data>
+ <data key="gender">F</data>
+</node>
+<node id="7">
+ <data key="name">Joylette</data>
+ <data key="gender">F</data>
+</node>
+<node id="8">
+ <data key="name">Amanda</data>
+ <data key="gender">F</data>
+</node>
+<node id="9">
+ <data key="name">Nathaniel</data>
+ <data key="gender">M</data>
+</node>
+<node id="10">
+ <data key="name">Bryan</data>
+ <data key="gender">M</data>
+</node>
+<node id="11">
+ <data key="name">Tamara</data>
+ <data key="gender">F</data>
+</node>
+<node id="12">
+ <data key="name">Ashley</data>
+ <data key="gender">F</data>
+</node>
+<node id="13">
+ <data key="name">Ryan</data>
+ <data key="gender">M</data>
+</node>
+<node id="14">
+ <data key="name">Alan</data>
+ <data key="gender">M</data>
+</node>
+<node id="15">
+ <data key="name">Chris</data>
+ <data key="gender">M</data>
+</node>
+<node id="16">
+ <data key="name">Holly</data>
+ <data key="gender">F</data>
+</node>
+<node id="17">
+ <data key="name">Patrick</data>
+ <data key="gender">M</data>
+</node>
+<node id="18">
+ <data key="name">Fernando</data>
+ <data key="gender">M</data>
+</node>
+<node id="19">
+ <data key="name">Corey</data>
+ <data key="gender">M</data>
+</node>
+<node id="20">
+ <data key="name">Ben</data>
+ <data key="gender">M</data>
+</node>
+<node id="21">
+ <data key="name">Non</data>
+ <data key="gender">M</data>
+</node>
+<!-- friends of friends -->
+<node id="22">
+ <data key="name">John</data>
+ <data key="gender">M</data>
+</node>
+<node id="23">
+ <data key="name">Calvin</data>
+ <data key="gender">M</data>
+</node>
+<node id="24">
+ <data key="name">Stephanie</data>
+ <data key="gender">F</data>
+</node>
+<node id="25">
+ <data key="name">John</data>
+ <data key="gender">M</data>
+</node>
+<node id="26">
+ <data key="name">Parker</data>
+ <data key="gender">M</data>
+</node>
+<node id="27">
+ <data key="name">Patrick</data>
+ <data key="gender">M</data>
+</node>
+<node id="28">
+ <data key="name">Marian</data>
+ <data key="gender">F</data>
+</node>
+<node id="29">
+ <data key="name">Robert</data>
+ <data key="gender">M</data>
+</node>
+<node id="30">
+ <data key="name">Patrick</data>
+ <data key="gender">M</data>
+</node>
+<node id="31">
+ <data key="name">Sam</data>
+ <data key="gender">M</data>
+</node>
+<node id="32">
+ <data key="name">Bob</data>
+ <data key="gender">M</data>
+</node>
+<node id="33">
+ <data key="name">Katie</data>
+ <data key="gender">F</data>
+</node>
+<node id="34">
+ <data key="name">Chako</data>
+ <data key="gender">F</data>
+</node>
+<!-- through alan -->
+<node id="35">
+ <data key="name">Diana</data>
+ <data key="gender">F</data>
+</node>
+<node id="36">
+ <data key="name">Record Camp</data>
+ <data key="gender">M</data>
+</node>
+<node id="37">
+ <data key="name">Chuck</data>
+ <data key="gender">M</data>
+</node>
+<node id="38">
+ <data key="name">Micah</data>
+ <data key="gender">M</data>
+</node>
+<node id="39">
+ <data key="name">SuperGiggleB</data>
+ <data key="gender">F</data>
+</node>
+<node id="40">
+ <data key="name">Dan</data>
+ <data key="gender">M</data>
+</node>
+<node id="41">
+ <data key="name">Ida</data>
+ <data key="gender">F</data>
+</node>
+<node id="42">
+ <data key="name">Wen-Ting</data>
+ <data key="gender">F</data>
+</node>
+<node id="43">
+ <data key="name">Nina</data>
+ <data key="gender">F</data>
+</node>
+<node id="44">
+ <data key="name">Rion</data>
+ <data key="gender">M</data>
+</node>
+<node id="45">
+ <data key="name">Otomi</data>
+ <data key="gender">F</data>
+</node>
+<node id="46">
+ <data key="name">Ed</data>
+ <data key="gender">M</data>
+</node>
+<node id="47">
+ <data key="name">Red</data>
+ <data key="gender">M</data>
+</node>
+<!-- through chris -->
+<node id="48">
+ <data key="name">Scott</data>
+ <data key="gender">M</data>
+</node>
+<node id="49">
+ <data key="name">Andrew</data>
+ <data key="gender">M</data>
+</node>
+<node id="50">
+ <data key="name">Emily</data>
+ <data key="gender">F</data>
+</node>
+<node id="51">
+ <data key="name">Robin</data>
+ <data key="gender">F</data>
+</node>
+<node id="52">
+ <data key="name">Ken</data>
+ <data key="gender">M</data>
+</node>
+<node id="53">
+ <data key="name">Michael</data>
+ <data key="gender">M</data>
+</node>
+<node id="54">
+ <data key="name">Jon</data>
+ <data key="gender">M</data>
+</node>
+<node id="55">
+ <data key="name">Josh</data>
+ <data key="gender">M</data>
+</node>
+<node id="56">
+ <data key="name">Matthew</data>
+ <data key="gender">M</data>
+</node>
+<node id="57">
+ <data key="name">Casey</data>
+ <data key="gender">M</data>
+</node>
+<node id="58">
+ <data key="name">Christopher</data>
+ <data key="gender">M</data>
+</node>
+<node id="59">
+ <data key="name">Stephen</data>
+ <data key="gender">M</data>
+</node>
+<node id="60">
+ <data key="name">Kenji</data>
+ <data key="gender">M</data>
+</node>
+<node id="61">
+ <data key="name">Richard</data>
+ <data key="gender">M</data>
+</node>
+<node id="62">
+ <data key="name">Matthew</data>
+ <data key="gender">M</data>
+</node>
+<node id="63">
+ <data key="name">David</data>
+ <data key="gender">M</data>
+</node>
+<node id="64">
+ <data key="name">Phil</data>
+ <data key="gender">M</data>
+</node>
+<node id="65">
+ <data key="name">David</data>
+ <data key="gender">M</data>
+</node>
+<!-- through holly -->
+<node id="66">
+ <data key="name">Pete</data>
+ <data key="gender">M</data>
+</node>
+<node id="67">
+ <data key="name">Jeremy</data>
+ <data key="gender">M</data>
+</node>
+<!-- through patrick -->
+<node id="68">
+ <data key="name">Daniel</data>
+ <data key="gender">M</data>
+</node>
+<node id="69">
+ <data key="name">Sumit</data>
+ <data key="gender">M</data>
+</node>
+<!-- through fernando -->
+<node id="70">
+ <data key="name">Shane</data>
+ <data key="gender">M</data>
+</node>
+<node id="71">
+ <data key="name">Rikard</data>
+ <data key="gender">M</data>
+</node>
+<node id="72">
+ <data key="name">David</data>
+ <data key="gender">M</data>
+</node>
+<node id="73">
+ <data key="name">Justin</data>
+ <data key="gender">M</data>
+</node>
+<node id="74">
+ <data key="name">Shane</data>
+ <data key="gender">M</data>
+</node>
+<node id="75">
+ <data key="name">Micaela</data>
+ <data key="gender">F</data>
+</node>
+<node id="76">
+ <data key="name">Steven</data>
+ <data key="gender">M</data>
+</node>
+<node id="77">
+ <data key="name">Matt</data>
+ <data key="gender">M</data>
+</node>
+<node id="78">
+ <data key="name">Jory</data>
+ <data key="gender">M</data>
+</node>
+<node id="79">
+ <data key="name">Alexander</data>
+ <data key="gender">M</data>
+</node>
+<node id="80">
+ <data key="name">Jason</data>
+ <data key="gender">M</data>
+</node>
+<node id="81">
+ <data key="name">JohnAnthony</data>
+ <data key="gender">M</data>
+</node>
+<!-- through ben -->
+<node id="82">
+ <data key="name">Dorothy</data>
+ <data key="gender">F</data>
+</node>
+<node id="83">
+ <data key="name">Nels</data>
+ <data key="gender">M</data>
+</node>
+<node id="84">
+ <data key="name">Rania</data>
+ <data key="gender">F</data>
+</node>
+<node id="85">
+ <data key="name">Michael</data>
+ <data key="gender">M</data>
+</node>
+<node id="86">
+ <data key="name">Evan</data>
+ <data key="gender">M</data>
+</node>
+<node id="87">
+ <data key="name">Joanna</data>
+ <data key="gender">F</data>
+</node>
+<node id="88">
+ <data key="name">sistah</data>
+ <data key="gender">F</data>
+</node>
+<node id="89">
+ <data key="name">Meredith</data>
+ <data key="gender">F</data>
+</node>
+<node id="90">
+ <data key="name">Eric</data>
+ <data key="gender">M</data>
+</node>
+<node id="91">
+ <data key="name">John</data>
+ <data key="gender">M</data>
+</node>
+<node id="92">
+ <data key="name">ryan</data>
+ <data key="gender">M</data>
+</node>
+<node id="93">
+ <data key="name">Eric</data>
+ <data key="gender">M</data>
+</node>
+<node id="94">
+ <data key="name">Jay</data>
+ <data key="gender">M</data>
+</node>
+<node id="95">
+ <data key="name">rumi</data>
+ <data key="gender">F</data>
+</node>
+<node id="96">
+ <data key="name">justin</data>
+ <data key="gender">M</data>
+</node>
+<node id="97">
+ <data key="name">Julij</data>
+ <data key="gender">F</data>
+</node>
+<node id="98">
+ <data key="name">beverly</data>
+ <data key="gender">F</data>
+</node>
+<node id="99">
+ <data key="name">Jai Young</data>
+ <data key="gender">F</data>
+</node>
+<node id="100">
+ <data key="name">spot</data>
+ <data key="gender">M</data>
+</node>
+<node id="101">
+ <data key="name">Tammy</data>
+ <data key="gender">F</data>
+</node>
+<node id="102">
+ <data key="name">Michael</data>
+ <data key="gender">M</data>
+</node>
+<node id="103">
+ <data key="name">jennifer</data>
+ <data key="gender">F</data>
+</node>
+<node id="104">
+ <data key="name">Brent</data>
+ <data key="gender">M</data>
+</node>
+<node id="105">
+ <data key="name">Lanha souris</data>
+ <data key="gender">F</data>
+</node>
+<node id="106">
+ <data key="name">dan</data>
+ <data key="gender">M</data>
+</node>
+<node id="107">
+ <data key="name">jeremy</data>
+ <data key="gender">M</data>
+</node>
+<node id="108">
+ <data key="name">Jim</data>
+ <data key="gender">M</data>
+</node>
+<node id="109">
+ <data key="name">steph</data>
+ <data key="gender">F</data>
+</node>
+<node id="110">
+ <data key="name">Jane</data>
+ <data key="gender">F</data>
+</node>
+<node id="111">
+ <data key="name">Justin</data>
+ <data key="gender">M</data>
+</node>
+<node id="112">
+ <data key="name">Kevin</data>
+ <data key="gender">M</data>
+</node>
+<node id="113">
+ <data key="name">Matt</data>
+ <data key="gender">M</data>
+</node>
+<node id="114">
+ <data key="name">Judith</data>
+ <data key="gender">F</data>
+</node>
+<node id="115">
+ <data key="name">Alexander</data>
+ <data key="gender">M</data>
+</node>
+<node id="116">
+ <data key="name">Caterina</data>
+ <data key="gender">F</data>
+</node>
+<node id="117">
+ <data key="name">Jesse James</data>
+ <data key="gender">M</data>
+</node>
+<node id="118">
+ <data key="name">Tom</data>
+ <data key="gender">M</data>
+</node>
+<node id="119">
+ <data key="name">Stewart</data>
+ <data key="gender">M</data>
+</node>
+<node id="120">
+ <data key="name">Meg</data>
+ <data key="gender">F</data>
+</node>
+<node id="121">
+ <data key="name">Matt</data>
+ <data key="gender">M</data>
+</node>
+<node id="122">
+ <data key="name">Anil</data>
+ <data key="gender">M</data>
+</node>
+<!-- through non -->
+<node id="123">
+ <data key="name">Scott</data>
+ <data key="gender">M</data>
+</node>
+<node id="124">
+ <data key="name">Steve</data>
+ <data key="gender">M</data>
+</node>
+<node id="125">
+ <data key="name">kris</data>
+ <data key="gender">M</data>
+</node>
+<node id="126">
+ <data key="name">Bill</data>
+ <data key="gender">M</data>
+</node>
+<node id="127">
+ <data key="name">Xz</data>
+ <data key="gender">M</data>
+</node>
+<node id="128">
+ <data key="name">David</data>
+ <data key="gender">M</data>
+</node>
+<node id="129">
+ <data key="name">Zephoria</data>
+ <data key="gender">F</data>
+</node>
+
+<!-- edges -->
+<edge source="1" target="2"></edge>
+<edge source="1" target="3"></edge>
+<edge source="1" target="4"></edge>
+<edge source="1" target="5"></edge>
+<edge source="1" target="6"></edge>
+<edge source="1" target="7"></edge>
+<edge source="1" target="8"></edge>
+<edge source="1" target="9"></edge>
+<edge source="1" target="10"></edge>
+<edge source="1" target="11"></edge>
+<edge source="1" target="12"></edge>
+<edge source="1" target="13"></edge>
+<edge source="1" target="14"></edge>
+<edge source="1" target="15"></edge>
+<edge source="1" target="16"></edge>
+<edge source="1" target="17"></edge>
+<edge source="1" target="18"></edge>
+<edge source="1" target="19"></edge>
+<edge source="1" target="20"></edge>
+<edge source="1" target="21"></edge>
+<!-- ed's friends -->
+<edge source="2" target="5"></edge>
+<edge source="2" target="8"></edge>
+<edge source="2" target="10"></edge>
+<!-- christiaan's friends -->
+<edge source="3" target="5"></edge>
+<edge source="3" target="8"></edge>
+<edge source="3" target="10"></edge>
+<edge source="3" target="17"></edge>
+<!-- emily's friends -->
+<edge source="4" target="22"></edge>
+<edge source="4" target="23"></edge>
+<edge source="4" target="24"></edge>
+<edge source="4" target="25"></edge>
+<edge source="4" target="26"></edge>
+<edge source="4" target="27"></edge>
+<!-- adam's friends -->
+<edge source="5" target="8"></edge>
+<edge source="5" target="10"></edge>
+<!-- cynthia's friends -->
+<edge source="6" target="14"></edge>
+<!-- joylette's friends -->
+<edge source="7" target="8"></edge>
+<edge source="7" target="10"></edge>
+<edge source="7" target="28"></edge>
+<!-- amanda's friends -->
+<edge source="8" target="10"></edge>
+<edge source="8" target="14"></edge>
+<edge source="8" target="15"></edge>
+<edge source="8" target="29"></edge>
+<edge source="8" target="17"></edge>
+<edge source="8" target="18"></edge>
+<edge source="8" target="30"></edge>
+<edge source="8" target="21"></edge>
+<!-- nathaniel's friends -->
+<!-- bryan's friends -->
+<edge source="10" target="31"></edge>
+<edge source="10" target="17"></edge>
+<edge source="10" target="30"></edge>
+<!-- tamara's friends -->
+<edge source="11" target="12"></edge>
+<edge source="11" target="32"></edge>
+<edge source="11" target="33"></edge>
+<!-- ashley's friends -->
+<!-- ryan's friends -->
+<edge source="13" target="34"></edge>
+<edge source="13" target="19"></edge>
+<!-- alan's friends -->
+<edge source="14" target="35"></edge>
+<edge source="14" target="36"></edge>
+<edge source="14" target="37"></edge>
+<edge source="14" target="38"></edge>
+<edge source="14" target="39"></edge>
+<edge source="14" target="40"></edge>
+<edge source="14" target="41"></edge>
+<edge source="14" target="42"></edge>
+<edge source="14" target="43"></edge>
+<edge source="14" target="44"></edge>
+<edge source="14" target="45"></edge>
+<edge source="14" target="46"></edge>
+<edge source="14" target="47"></edge>
+<edge source="14" target="15"></edge>
+<edge source="14" target="18"></edge>
+<edge source="14" target="21"></edge>
+<!-- chris's friends -->
+<edge source="15" target="48"></edge>
+<edge source="15" target="49"></edge>
+<edge source="15" target="50"></edge>
+<edge source="15" target="51"></edge>
+<edge source="15" target="52"></edge>
+<edge source="15" target="53"></edge>
+<edge source="15" target="54"></edge>
+<edge source="15" target="55"></edge>
+<edge source="15" target="56"></edge>
+<edge source="15" target="57"></edge>
+<edge source="15" target="58"></edge>
+<edge source="15" target="59"></edge>
+<edge source="15" target="60"></edge>
+<edge source="15" target="61"></edge>
+<edge source="15" target="62"></edge>
+<edge source="15" target="63"></edge>
+<edge source="15" target="64"></edge>
+<edge source="15" target="65"></edge>
+<edge source="15" target="16"></edge>
+<edge source="15" target="18"></edge>
+<edge source="15" target="21"></edge>
+<!-- holly's friends -->
+<edge source="16" target="66"></edge>
+<edge source="16" target="59"></edge>
+<edge source="16" target="60"></edge>
+<edge source="16" target="67"></edge>
+<!-- patrick's friends -->
+<edge source="17" target="68"></edge>
+<edge source="17" target="69"></edge>
+<!-- fernando's friends -->
+<edge source="18" target="70"></edge>
+<edge source="18" target="71"></edge>
+<edge source="18" target="72"></edge>
+<edge source="18" target="73"></edge>
+<edge source="18" target="74"></edge>
+<edge source="18" target="75"></edge>
+<edge source="18" target="76"></edge>
+<edge source="18" target="77"></edge>
+<edge source="18" target="78"></edge>
+<edge source="18" target="79"></edge>
+<edge source="18" target="80"></edge>
+<edge source="18" target="81"></edge>
+<!-- corey's friends -->
+<edge source="19" target="20"></edge>
+<!-- ben's friends -->
+<edge source="20" target="45"></edge>
+<edge source="20" target="46"></edge>
+<edge source="20" target="82"></edge>
+<edge source="20" target="83"></edge>
+<edge source="20" target="84"></edge>
+<edge source="20" target="85"></edge>
+<edge source="20" target="86"></edge>
+<edge source="20" target="87"></edge>
+<edge source="20" target="88"></edge>
+<edge source="20" target="89"></edge>
+<edge source="20" target="90"></edge>
+<edge source="20" target="91"></edge>
+<edge source="20" target="92"></edge>
+<edge source="20" target="93"></edge>
+<edge source="20" target="94"></edge>
+<edge source="20" target="95"></edge>
+<edge source="20" target="96"></edge>
+<edge source="20" target="97"></edge>
+<edge source="20" target="98"></edge>
+<edge source="20" target="99"></edge>
+<edge source="20" target="100"></edge>
+<edge source="20" target="101"></edge>
+<edge source="20" target="102"></edge>
+<edge source="20" target="103"></edge>
+<edge source="20" target="104"></edge>
+<edge source="20" target="105"></edge>
+<edge source="20" target="106"></edge>
+<edge source="20" target="107"></edge>
+<edge source="20" target="108"></edge>
+<edge source="20" target="109"></edge>
+<edge source="20" target="110"></edge>
+<edge source="20" target="111"></edge>
+<edge source="20" target="112"></edge>
+<edge source="20" target="113"></edge>
+<edge source="20" target="114"></edge>
+<edge source="20" target="115"></edge>
+<edge source="20" target="116"></edge>
+<edge source="20" target="117"></edge>
+<edge source="20" target="118"></edge>
+<edge source="20" target="119"></edge>
+<edge source="20" target="120"></edge>
+<edge source="20" target="121"></edge>
+<edge source="20" target="122"></edge>
+<!-- non's friends -->
+<edge source="21" target="123"></edge>
+<edge source="21" target="124"></edge>
+<edge source="21" target="125"></edge>
+<edge source="21" target="126"></edge>
+<edge source="21" target="127"></edge>
+<edge source="21" target="128"></edge>
+<edge source="21" target="129"></edge>
+
+</graph>
+</graphml>

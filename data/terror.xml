@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  weighted social network of known and suspected terrorists  -->
+<!--  involved in the September 11, 2001 attacks                 -->
+
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+ <graph edgedefault="undirected">
+ 
+  <!-- data schema -->
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="flight" for="node" attr.name="flight" attr.type="string">
+    <default></default>
+  </key>
+  <key id="pilot" for="node" attr.name="pilot" attr.type="boolean">
+    <default>false</default>
+  </key>
+  <key id="weight" for="edge" attr.name="weight" attr.type="int"/>
+  
+  <!-- nodes -->
+  <node id="al-shehhi">
+    <data key="name">Marwan Al-Shehhi</data>
+    <data key="flight">United Airlines Flight 175 (WTC2)</data>
+    <data key="pilot">true</data>
+  </node>
+  <node id="alshehri">
+    <data key="name">Waleed M. Alshehri</data>
+    <data key="flight">American Airlines Flight 11 (WTC1)</data>
+  </node>
+  <node id="halghamdi">
+    <data key="name">Hamza Alghamdi</data>
+    <data key="flight">United Airlines Flight 175 (WTC2)</data>
+  </node>
+  <node id="alsuqami">
+    <data key="name">Satam M. A. Al Suqami</data>  
+    <data key="flight">American Airlines Flight 11 (WTC1)</data>
+  </node>
+  <node id="omar">
+    <data key="name">Ramzi Omar</data>  
+  </node>
+  <node id="abdullah">
+    <data key="name">Rayed Mohammed Abdullah</data>  
+  </node>
+  <node id="essabar">
+    <data key="name">Zakariya Essabar</data>  
+  </node>
+  <node id="moqed">
+    <data key="name">Majed Moqed</data>  
+    <data key="flight">American Airlines Flight 77 (Pentagon)</data>
+  </node>
+  <node id="nalhazmi">
+    <data key="name">Nawaf Alhazmi</data>  
+    <data key="flight">American Airlines Flight 77 (Pentagon)</data>
+  </node>
+  <node id="salim">
+    <data key="name">Mamduh Mahmud Salim</data>  
+  </node>
+  <node id="atta">
+    <data key="name">Mohamed Atta</data>  
+    <data key="flight">American Airlines Flight 11 (WTC1)</data>
+    <data key="pilot">true</data>
+  </node>
+  <node id="moussaoui">
+    <data key="name">Habib Zacarias Moussaoui</data>  
+  </node>
+  <node id="raissi">
+    <data key="name">Lotfi Raissi</data>  
+  </node>
+  <node id="bahaji">
+    <data key="name">Said Bahaji</data>  
+  </node>
+  <node id="al-marabh">
+    <data key="name">Nabil al-Marabh</data>  
+  </node>
+  <node id="salhazmi">
+    <data key="name">Salem Alhazmi</data>  
+    <data key="flight">American Airlines Flight 77 (Pentagon)</data>
+  </node>
+  <node id="aalghamdi">
+    <data key="name">Ahmed Alghamdi</data>  
+    <data key="flight">United Airlines Flight 175 (WTC2)</data>
+  </node>
+  <node id="abdi">
+    <data key="name">Mohamed Abdi</data>  
+  </node>
+  <node id="saiid">
+    <data key="name">Shaykh Saiid</data>  
+  </node>
+  <node id="alhaznawi">
+    <data key="name">Ahmed Ibrahim A. Al Haznawi</data>  
+    <data key="flight">United Airlines Flight 93 (Pennsylvania)</data>
+  </node>
+  <node id="alomari">
+    <data key="name">Abdulaziz Alomari</data>  
+    <data key="flight">American Airlines Flight 11 (WTC1)</data>
+  </node>
+  <node id="darkazanli">
+    <data key="name">Mamoun Darkazanli</data>  
+  </node>
+  <node id="alnami">
+    <data key="name">Ahmed Alnami</data>  
+    <data key="flight">United Airlines Flight 93 (Pennsylvania)</data>
+  </node>
+  <node id="salghamdi">
+    <data key="name">Saeed Alghamdi</data>  
+    <data key="flight">United Airlines Flight 93 (Pennsylvania)</data>
+  </node>
+  <node id="hijazi">
+    <data key="name">Raed Hijazi</data>  
+  </node>
+  <node id="malshehri">
+    <data key="name">Mohand Alshehri</data>  
+    <data key="flight">United Airlines Flight 175 (WTC2)</data>
+  </node>
+  <node id="almihdhar">
+    <data key="name">Khalid Almihdhar</data>  
+    <data key="flight">American Airlines Flight 77 (Pentagon)</data>
+  </node>
+  <node id="shaikh">
+    <data key="name">Abdussattar Shaikh</data>  
+  </node>
+  <node id="jarrah">
+    <data key="name">Ziad Samir Jarrah</data>  
+    <data key="flight">United Airlines Flight 93 (Pennsylvania)</data>
+    <data key="pilot">true</data>
+  </node>
+  <node id="walshehri">
+    <data key="name">Wail M. Alshehri</data>  
+    <data key="flight">American Airlines Flight 11 (WTC1)</data>
+  </node>
+  <node id="banihammad">
+    <data key="name">Fayez Rashid Ahmed Hassan Al Qadi Banihammad</data>  
+    <data key="flight">United Airlines Flight 175 (WTC2)</data>
+  </node>
+  <node id="alsalmi">
+    <data key="name">Faisal Al Salmi</data>  
+  </node>
+  <node id="al-ani">
+    <data key="name">Ahmed Khalil Ibrahim Samir Al-Ani</data>  
+  </node>
+  <node id="hanjour">
+    <data key="name">Hani Hanjour</data>  
+    <data key="flight">American Airlines Flight 77 (Pentagon)</data>
+    <data key="pilot">true</data>
+  </node>
+
+  <!-- edges -->
+  <edge source="al-shehhi" target="halghamdi"><data key="weight">1</data></edge>
+  <edge source="al-shehhi" target="raissi"><data key="weight">2</data></edge>
+  <edge source="al-shehhi" target="essabar"><data key="weight">3</data></edge>
+  <edge source="al-shehhi" target="atta"><data key="weight">3</data></edge>
+  <edge source="al-shehhi" target="omar"><data key="weight">3</data></edge>
+  <edge source="al-shehhi" target="bahaji"><data key="weight">3</data></edge>
+  <edge source="al-shehhi" target="jarrah"><data key="weight">3</data></edge>
+  <edge source="al-shehhi" target="darkazanli"><data key="weight">2</data></edge>
+  <edge source="al-shehhi" target="saiid"><data key="weight">1</data></edge>
+  <edge source="al-shehhi" target="alshehri"><data key="weight">1</data></edge>
+  <edge source="al-shehhi" target="walshehri"><data key="weight">1</data></edge>
+  <edge source="al-shehhi" target="alsuqami"><data key="weight">1</data></edge>
+  <edge source="alshehri" target="saiid"><data key="weight">1</data></edge>
+  <edge source="alshehri" target="walshehri"><data key="weight">3</data></edge>
+  <edge source="alshehri" target="alomari"><data key="weight">1</data></edge>
+  <edge source="alshehri" target="alsuqami"><data key="weight">3</data></edge>
+  <edge source="alshehri" target="banihammad"><data key="weight">1</data></edge>
+  <edge source="halghamdi" target="nalhazmi"><data key="weight">2</data></edge>
+  <edge source="halghamdi" target="alnami"><data key="weight">3</data></edge>
+  <edge source="halghamdi" target="salghamdi"><data key="weight">2</data></edge>
+  <edge source="halghamdi" target="aalghamdi"><data key="weight">2</data></edge>
+  <edge source="halghamdi" target="alhaznawi"><data key="weight">3</data></edge>
+  <edge source="halghamdi" target="malshehri"><data key="weight">2</data></edge>
+  <edge source="alsuqami" target="hijazi"><data key="weight">2</data></edge>
+  <edge source="alsuqami" target="al-marabh"><data key="weight">2</data></edge>
+  <edge source="alsuqami" target="banihammad"><data key="weight">1</data></edge>
+  <edge source="alsuqami" target="walshehri"><data key="weight">3</data></edge>
+  <edge source="alsuqami" target="alomari"><data key="weight">1</data></edge>
+  <edge source="alsuqami" target="atta"><data key="weight">1</data></edge>
+  <edge source="omar" target="bahaji"><data key="weight">3</data></edge>
+  <edge source="omar" target="essabar"><data key="weight">3</data></edge>
+  <edge source="omar" target="atta"><data key="weight">3</data></edge>
+  <edge source="omar" target="jarrah"><data key="weight">3</data></edge>
+  <edge source="abdullah" target="alsalmi"><data key="weight">1</data></edge>
+  <edge source="abdullah" target="hanjour"><data key="weight">3</data></edge>
+  <edge source="abdullah" target="raissi"><data key="weight">2</data></edge>
+  <edge source="essabar" target="atta"><data key="weight">3</data></edge>
+  <edge source="essabar" target="bahaji"><data key="weight">3</data></edge>
+  <edge source="essabar" target="jarrah"><data key="weight">3</data></edge>
+  <edge source="moqed" target="almihdhar"><data key="weight">1</data></edge>
+  <edge source="moqed" target="nalhazmi"><data key="weight">1</data></edge>
+  <edge source="moqed" target="salhazmi"><data key="weight">1</data></edge>
+  <edge source="moqed" target="hanjour"><data key="weight">3</data></edge>
+  <edge source="nalhazmi" target="shaikh"><data key="weight">2</data></edge>
+  <edge source="nalhazmi" target="almihdhar"><data key="weight">3</data></edge>
+  <edge source="nalhazmi" target="abdi"><data key="weight">2</data></edge>
+  <edge source="nalhazmi" target="alnami"><data key="weight">3</data></edge>
+  <edge source="nalhazmi" target="salghamdi"><data key="weight">3</data></edge>
+  <edge source="nalhazmi" target="hanjour"><data key="weight">3</data></edge>
+  <edge source="nalhazmi" target="salhazmi"><data key="weight">3</data></edge>
+  <edge source="salim" target="darkazanli"><data key="weight">2</data></edge>
+  <edge source="atta" target="hanjour"><data key="weight">2</data></edge>
+  <edge source="atta" target="moussaoui"><data key="weight">1</data></edge>
+  <edge source="atta" target="raissi"><data key="weight">2</data></edge>
+  <edge source="atta" target="al-ani"><data key="weight">2</data></edge>
+  <edge source="atta" target="jarrah"><data key="weight">3</data></edge>
+  <edge source="atta" target="bahaji"><data key="weight">3</data></edge>
+  <edge source="atta" target="darkazanli"><data key="weight">2</data></edge>
+  <edge source="atta" target="saiid"><data key="weight">1</data></edge>
+  <edge source="atta" target="walshehri"><data key="weight">1</data></edge>
+  <edge source="atta" target="banihammad"><data key="weight">1</data></edge>
+  <edge source="raissi" target="hanjour"><data key="weight">2</data></edge>
+  <edge source="raissi" target="jarrah"><data key="weight">2</data></edge>
+  <edge source="bahaji" target="jarrah"><data key="weight">3</data></edge>
+  <edge source="al-marabh" target="aalghamdi"><data key="weight">2</data></edge>
+  <edge source="al-marabh" target="hijazi"><data key="weight">2</data></edge>
+  <edge source="al-marabh" target="salghamdi"><data key="weight">2</data></edge>
+  <edge source="salhazmi" target="almihdhar"><data key="weight">1</data></edge>
+  <edge source="salhazmi" target="hanjour"><data key="weight">2</data></edge>
+  <edge source="salhazmi" target="aalghamdi"><data key="weight">1</data></edge>
+  <edge source="salhazmi" target="alomari"><data key="weight">1</data></edge>
+  <edge source="salghamdi" target="alhaznawi"><data key="weight">3</data></edge>
+  <edge source="aalghamdi" target="hanjour"><data key="weight">1</data></edge>
+  <edge source="aalghamdi" target="alomari"><data key="weight">1</data></edge>
+  <edge source="alhaznawi" target="jarrah"><data key="weight">3</data></edge>
+  <edge source="alomari" target="banihammad"><data key="weight">1</data></edge>
+  <edge source="alomari" target="walshehri"><data key="weight">1</data></edge>
+  <edge source="alomari" target="hanjour"><data key="weight">1</data></edge>
+  <edge source="alnami" target="salghamdi"><data key="weight">3</data></edge>
+  <edge source="salghamdi" target="hijazi"><data key="weight">2</data></edge>
+  <edge source="malshehri" target="banihammad"><data key="weight">2</data></edge>
+  <edge source="almihdhar" target="shaikh"><data key="weight">3</data></edge>
+  <edge source="almihdhar" target="hanjour"><data key="weight">3</data></edge>
+  <edge source="walshehri" target="banihammad"><data key="weight">1</data></edge>
+  <edge source="alsalmi" target="hanjour"><data key="weight">1</data></edge>
+ </graph>
+</graphml>
+

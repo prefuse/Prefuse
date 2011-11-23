@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE tree SYSTEM "treeml.dtd">
+<tree>
+ <declarations>
+  <attributeDecl name="name" type="String"/>
+  <attributeDecl name="number" type="Real"/>
+  <attributeDecl name="type" type="String"/>
+ </declarations>
+ <branch>
+        <attribute name="name" value="sample things"/>
+  <branch>
+        <attribute name="name" value="plants"/>
+      <leaf>
+       <attribute name="name" value="oak"/>
+       <attribute name="number" value="10"/>
+       <attribute name="type" value="wild"/>
+      </leaf>
+      <leaf>
+       <attribute name="name" value="afican violet"/>
+       <attribute name="number" value="3"/>
+       <attribute name="type" value="domestic"/>
+      </leaf>
+  </branch>
+  <branch>
+        <attribute name="name" value="animals"/>
+   <branch>
+        <attribute name="name" value="mammals"/>
+    <branch>
+        <attribute name="name" value="felines"/>
+       <leaf>
+        <attribute name="name" value="cat"/>
+        <attribute name="number" value="10"/>
+        <attribute name="type" value="domestic"/>
+       </leaf>
+       <leaf>
+        <attribute name="name" value="lion"/>
+        <attribute name="number" value="3"/>
+       <attribute name="type" value="wild"/>
+       </leaf>
+    </branch>
+    <branch>
+        <attribute name="name" value="primates"/>
+       <leaf>
+        <attribute name="name" value="human"/>
+        <attribute name="number" value="30"/>
+       <attribute name="type" value="domestic"/>
+       </leaf>
+       <leaf>
+        <attribute name="name" value="gorilla"/>
+        <attribute name="number" value="8"/>
+       <attribute name="type" value="wild"/>
+       </leaf>
+    </branch>
+   </branch>
+  </branch>
+ </branch>
+</tree>
