@@ -321,7 +321,10 @@ public class DataSizeAction extends SizeAction {
                 m_dist[1]= DataLib.max(ts, m_dataField).getDouble(m_dataField);
             }
             if ( m_inferRange ) {
-                m_sizeRange = m_dist[m_dist.length-1]/m_dist[0] - m_minSize;
+		if (m_dist[0]==0) //Avoid division by 0 
+			m_sizeRange = m_dist[m_dist.length-1] - m_minSize; 
+		else 
+			m_sizeRange = m_dist[m_dist.length-1]/m_dist[0] - m_minSize;
             }
         }
     }
