@@ -42,8 +42,9 @@ public class ToolTipControl extends ControlAdapter {
         Display d = (Display)e.getSource();
         if ( label.length == 1 ) {
             // optimize the simple case
-            if ( item.canGetString(label[0]) )
+            if ( item.canGetString(label[0]) ) {
                 d.setToolTipText(item.getString(label[0]));
+            }
         } else {
             sbuf.delete(0, sbuf.length());
             for ( int i=0; i<label.length; ++i ) {
@@ -53,7 +54,10 @@ public class ToolTipControl extends ControlAdapter {
                     sbuf.append(item.getString(label[i]));
                 }
             }
-            d.setToolTipText(sbuf.toString());
+            // show tool tip only, if at least one field is available
+            if (sbuf.length() > 0) {
+            	d.setToolTipText(sbuf.toString());
+            }
         }
     }
     
