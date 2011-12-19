@@ -96,8 +96,8 @@ public class NumberRangeModel extends DefaultBoundedRangeModel
         		long lo = m_lo.longValue() - m_min.longValue();
         		long hi = m_hi.longValue() - m_min.longValue();
         	
-        		int v = 10000 * (int)( lo / range );
-        		int e = 10000 * (int)( hi / range ) - v;
+        		int v = (int)(10000 *  lo / range );
+        		int e = (int)(10000 *  hi / range ) - v;
         		setRange(v, e, 0, 10000);
         	}
         }
@@ -110,8 +110,8 @@ public class NumberRangeModel extends DefaultBoundedRangeModel
         		double lo = m_lo.doubleValue() - m_min.doubleValue();
         		double hi = m_hi.doubleValue() - m_min.doubleValue();
 
-        		int v = 10000 * (int)( lo / range );
-        		int e = 10000 * (int)( hi / range ) - v;
+        		int v = (int)(10000.0 * lo / range );
+        		int e = (int)(10000.0 * hi / range ) - v;
         		setRange(v, e, 0, 10000);
         	}
         }
