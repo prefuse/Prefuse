@@ -1184,7 +1184,7 @@ public class Graph extends CompositeTupleSet {
 
     /**
      * Returns a spanning tree rooted at the specified node. If the current
-     * spanning tree is alrady rooted at the given node, it is simply
+     * spanning tree is already rooted at the given node, it is simply
      * returned. Otherwise, the tree is reconstructed at the new root and
      * made the current spanning tree for this Graph instance.
      * 

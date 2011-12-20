@@ -72,7 +72,7 @@ public abstract class Layout extends GroupAction {
      * an attempt is made to compute the bounds based upon the display
      * region of the first display found in this action's associated
      * Visualization.
-     * @return the layout bounds within which to constain the layout.
+     * @return the layout bounds within which to constrain the layout.
      */
     public Rectangle2D getLayoutBounds() {
         if ( m_bounds != null )
@@ -146,7 +146,7 @@ public abstract class Layout extends GroupAction {
      * item (if non null) will be used to set the start coordinate.
      * @param item the item to set
      * @param referrer the referrer item to use for the start location if
-     * the current valu eis not a number (NaN)
+     * the current value is not a number (NaN)
      * @param x the x-coordinate value to set. This will be set for both
      * the current and end values.
      * @see prefuse.util.PrefuseLib#setX(VisualItem, VisualItem, double)
@@ -163,7 +163,7 @@ public abstract class Layout extends GroupAction {
      * item (if non null) will be used to set the start coordinate.
      * @param item the item to set
      * @param referrer the referrer item to use for the start location if
-     * the current valu eis not a number (NaN)
+     * the current value is not a number (NaN)
      * @param y the y-coordinate value to set. This will be set for both
      * the current and end values.
      * @see prefuse.util.PrefuseLib#setY(VisualItem, VisualItem, double)

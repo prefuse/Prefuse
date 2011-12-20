@@ -9,7 +9,7 @@ import java.net.URL;
 import prefuse.data.Graph;
 
 /**
- * nterface for classes that read in Graph or Tree data from a particular
+ * interface for classes that read in Graph or Tree data from a particular
  * file format.
  * 
  * @author <a href="http://jheer.org">jeffrey heer</a>
@@ -22,7 +22,7 @@ public interface GraphReader {
      * using the {@link prefuse.util.io.IOLib#streamFromString(String)} method,
      * allowing URLs, classpath references, and files on the file system
      * to be accessed.
-     * @param location the location to read the table from
+     * @param location the location to read the graph from
      * @return the loaded Graph
      * @throws FileNotFoundException
      * @throws IOException

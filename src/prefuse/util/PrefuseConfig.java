@@ -11,8 +11,8 @@ import prefuse.util.io.IOLib;
 
 /**
  * <p>Runtime configuration settings for the prefuse framework. Maintains a set
- * of hardwired configuration settings that can be overrriden by creating a
- * text proeprties file containing custom values. By default, prefuse will
+ * of hardwired configuration settings that can be overridden by creating a
+ * text properties file containing custom values. By default, prefuse will
  * look for the file "prefuse.conf" in the current working directory for
  * configuration name/value pairs. The framework can be instructed to look for
  * a different file by putting the full path to the file into the

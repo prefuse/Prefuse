@@ -9,7 +9,7 @@ import prefuse.visual.expression.StartVisiblePredicate;
 
 /**
  * Animator that interpolates the visibility status of VisualItems. Items
- * not currently visible but with end visibilty true are faded in, while
+ * not currently visible but with end visibility true are faded in, while
  * items currently visible but with end visibility false are faded out and
  * finally set to not visible.
  * 

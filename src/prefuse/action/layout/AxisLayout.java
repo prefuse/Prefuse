@@ -109,7 +109,7 @@ public class AxisLayout extends Layout {
     }
     
     /**
-     * Set the range model determing the span of the axis. This model controls
+     * Set the range model determining the span of the axis. This model controls
      * the minimum and maximum values of the layout, as provided by the
      * {@link prefuse.util.ui.ValuedRangeModel#getLowValue()} and
      * {@link prefuse.util.ui.ValuedRangeModel#getHighValue()} methods.
@@ -121,7 +121,7 @@ public class AxisLayout extends Layout {
     }
     
     /**
-     * Get the range model determing the span of the axis. This model controls
+     * Get the range model determining the span of the axis. This model controls
      * the minimum and maximum values of the layout, as provided by the
      * {@link prefuse.util.ui.ValuedRangeModel#getLowValue()} and
      * {@link prefuse.util.ui.ValuedRangeModel#getHighValue()} methods.
