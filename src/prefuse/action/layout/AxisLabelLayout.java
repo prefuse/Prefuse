@@ -490,7 +490,7 @@ public class AxisLabelLayout extends Layout {
             VisualItem item = (VisualItem)iter.next();
             reset(item);
             double v = item.getDouble(VALUE);
-            double x = span==0 ? 0 : ((v-m_lo)/span)*breadth;
+            double x = span==0 ? 0.5*breadth : ((v-m_lo)/span)*breadth;
             set(item, x, b);
         }
 
@@ -507,7 +507,7 @@ public class AxisLabelLayout extends Layout {
                 VisualItem item = labels.addItem();
                 item.set(VisualItem.LABEL, model.getObject(v).toString());
                 item.setDouble(VisualItem.VALUE, v);
-                double f = pspan==0 ? 0 : ((v-m_prevlo)/pspan);
+                double f = pspan==0 ? 0.5 : ((v-m_prevlo)/pspan);
                 if ( f <= 0 || f >= 1.0 ) item.setStartVisible(true);
                 set(item, f*breadth, b);
                 set(item, (v-m_lo)*breadth/span, b);

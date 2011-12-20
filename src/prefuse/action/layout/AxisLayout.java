@@ -351,7 +351,7 @@ public class AxisLayout extends Layout {
         while ( iter.hasNext() ) {
             VisualItem item = (VisualItem)iter.next();
             int order = model.getIndex(item.get(m_field)) - start;
-            set(item, order/total);
+            set(item, (total > 0.0) ? order/total : 0.5);
         }
     }
     
