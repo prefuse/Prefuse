@@ -31,8 +31,8 @@ import prefuse.visual.VisualItem;
  * "label".</p>
  * <pre>
  *   DefaultRendererFactory rf = new DefaultRendererFactory();
- *   rf.setDefaultEdgeRenderer(new EdgeRenderer(Constants.EDGE_TYPE_CURVE);
- *   rf.add("INGROUP('data')", new LabelRenderer("label");
+ *   rf.setDefaultEdgeRenderer(new EdgeRenderer(Constants.EDGE_TYPE_CURVE));
+ *   rf.add("INGROUP('data')", new LabelRenderer("label"));
  * </pre>
  * 
  * @author <a href="http://jheer.org">jeffrey heer</a>
