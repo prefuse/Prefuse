@@ -594,4 +594,8 @@ public class AxisLabelLayout extends Layout {
         }
     }
     
+    protected int getAxis() {
+        return m_axis;   
+    }
+    
 } // end of class AxisLabels
