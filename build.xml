@@ -14,7 +14,7 @@
     <property name="version" value="beta"/>
 
     <property name="build.compiler" value="modern"/>
-    <property name="debug" value="on"/>
+    <property name="debug" value="off"/>
     <property name="optimize" value="on"/>
     <property name="deprecation" value="on"/>
     <property name="packages" value="prefuse.*"/>
@@ -124,7 +124,7 @@
     <javac srcdir="${build.prefuse.src}"
            destdir="${build.prefuse.dest}"
     	       classpath="${lucene.lib}"
-           debug="${debug}"
+           debug="true" debuglevel="lines,vars,source"
            deprecation="${deprecation}"
            optimize="${optimize}"/>
   </target>
