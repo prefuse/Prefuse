@@ -597,7 +597,7 @@ public class AxisLabelLayout extends Layout {
     /**
      * Returns whether this AxisLabelLayout
      * manages an X or Y axis
-     * /
+     */
     protected int getAxis() {
         return m_axis;   
     }
