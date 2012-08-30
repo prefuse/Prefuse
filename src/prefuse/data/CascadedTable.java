@@ -157,7 +157,7 @@ public class CascadedTable extends Table {
     protected void filterColumns() {
         if ( m_parent == null ) return;
         
-        for ( int i=0; i<m_parent.size(); ++i ) {
+        for ( int i=0; i<m_parent.getColumnCount(); ++i ) {
             String name = (String)m_pnames.get(i);
             Column col = m_parent.getColumn(i);
             boolean contained = m_names.contains(name);
