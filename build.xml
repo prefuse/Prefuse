@@ -14,7 +14,7 @@
     <property name="version" value="beta"/>
 
     <property name="build.compiler" value="modern"/>
-    <property name="debug" value="off"/>
+    <property name="debug" value="on"/>
     <property name="optimize" value="on"/>
     <property name="deprecation" value="on"/>
     <property name="packages" value="prefuse.*"/>
