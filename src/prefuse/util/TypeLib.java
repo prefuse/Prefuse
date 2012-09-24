@@ -193,7 +193,7 @@ public class TypeLib {
         }
         if ( c1 == double.class || c2 == double.class ) {
             return double.class;
-        } else if ( c1 == float.class || c1 == float.class ) {
+        } else if ( c1 == float.class || c2 == float.class ) {
             return float.class;
         } else if ( c1 == long.class || c2 == long.class ) {
             return long.class;
