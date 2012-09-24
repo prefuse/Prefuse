@@ -179,7 +179,7 @@ abstract class IntFunction extends FunctionExpression {
         return (long)getInt(t);
     }
     public float getFloat(Tuple t) {
-        return (float)getFloat(t);
+        return (float)getInt(t);
     }
     public double getDouble(Tuple t) {
         return (double)getInt(t);
