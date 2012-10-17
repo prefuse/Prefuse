@@ -248,6 +248,8 @@ public class NodeLinkTreeLayout extends TreeLayout {
         
         NodeItem root = getLayoutRoot();
         Params rp = getParams(root);
+
+	g.getSpanningTree(root);
         
         // do first pass - compute breadth information, collect depth info
         firstWalk(root, 0, 1);
