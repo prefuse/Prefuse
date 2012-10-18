@@ -130,6 +130,8 @@ public class RadialTreeLayout extends TreeLayout {
         m_origin = getLayoutAnchor();
         NodeItem n = getLayoutRoot();
         Params np = (Params)n.get(PARAMS);
+
+	g.getSpanningTree(n);
         
         // calc relative widths and maximum tree depth
         // performs one pass over the tree
