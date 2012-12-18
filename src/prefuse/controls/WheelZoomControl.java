@@ -19,7 +19,7 @@ public class WheelZoomControl extends AbstractZoomControl {
     
     private Point m_point = new Point();
     private final boolean inverted;
-    private final boolean zoomAtPointer;
+    private final boolean atPointer;
     
     /**
      * Creates a new <tt>WheelZoomControl</tt>.  If <tt>inverted</tt> is true,
@@ -32,7 +32,7 @@ public class WheelZoomControl extends AbstractZoomControl {
      */
     public WheelZoomControl(boolean inverted, boolean atPointer) {
     	this.inverted = inverted;
-    	this.zoomAtPointer = atPointer;
+    	this.atPointer = atPointer;
     }
     
     /**
@@ -56,7 +56,7 @@ public class WheelZoomControl extends AbstractZoomControl {
      */
     public void mouseWheelMoved(MouseWheelEvent e) {
         Display display = (Display)e.getComponent();
-        if(zoomAtPointer) m_point = e.getPoint();
+        if(atPointer) m_point = e.getPoint();
         else {
         	m_point.x = display.getWidth()/2;
         	m_point.y = display.getHeight()/2;
