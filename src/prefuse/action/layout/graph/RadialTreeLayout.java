@@ -151,6 +151,15 @@ public class RadialTreeLayout extends TreeLayout {
         np.angle = m_theta2-m_theta1;
     }
     
+    /**
+     * Clears references to graph tuples.  The group and visualization are
+     * retained.
+     */
+    public void reset() {
+    	super.reset();
+    	m_prevRoot = null;
+    }
+    
     protected void setScale(Rectangle2D bounds) {
         double r = Math.min(bounds.getWidth(),bounds.getHeight())/2.0;
         if ( m_maxDepth > 0 )

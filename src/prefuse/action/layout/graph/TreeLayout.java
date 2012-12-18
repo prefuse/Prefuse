@@ -52,7 +52,9 @@ public abstract class TreeLayout extends Layout {
     }
     
     /**
-     * Return the NodeItem to use as the root for this tree layout.
+     * Return the NodeItem to use as the root for this tree layout.  If the
+     * layout root is not set, this method has the side effect of setting it
+     * to the root of the graph's spanning tree.
      * @return the root node to use for this tree layout.
      * @throws IllegalStateException if the action's data group does not
      * resolve to a {@link prefuse.data.Graph} instance.
@@ -69,6 +71,14 @@ public abstract class TreeLayout extends Layout {
             throw new IllegalStateException("This action's data group does" +
                     "not resolve to a Graph instance.");
         }
+    }
+    
+    /**
+     * Clears references to graph tuples.  The group and visualization are
+     * retained.
+     */
+    public void reset() {
+    	m_root = null;
     }
 
 } // end of abstract class TreeLayout
