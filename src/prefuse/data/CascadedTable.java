@@ -159,9 +159,10 @@ public class CascadedTable extends Table {
         
         for ( int i=0; i<m_pnames.size(); ++i ) {
             String name = (String)m_pnames.get(i);
-            Column col = m_parent.getColumn(i);
+            Column col = m_parent.getColumn(name);
             boolean contained = m_names.contains(name);
-            if ( !m_colFilter.include(col, name) || contained ) {
+            boolean removedFromParent = (col == null);
+            if (removedFromParent || !m_colFilter.include(col, name) || contained ) {
                 m_pnames.remove(i--);
                 if ( !contained ) {
                     ((ColumnEntry)m_entries.get(name)).dispose();
