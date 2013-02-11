@@ -498,6 +498,7 @@ public abstract class AbstractTreeMap implements IntSortedMap {
         Entry next, end;
 
         EntryIterator(boolean reverse) {
+            this.reverse = reverse;
             next = reverse ? maximum(root) : minimum(root);
             end = NIL;
         }
