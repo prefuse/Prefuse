@@ -19,7 +19,7 @@ import prefuse.visual.NodeItem;
  * tree can be set such that the tree goes left-to-right (default),
  * right-to-left, top-to-bottom, or bottom-to-top.</p>
  * 
- * <p>The algorithm used is that of Christoph Buchheim, Michael Jünger,
+ * <p>The algorithm used is that of Christoph Buchheim, Michael Juenger,
  * and Sebastian Leipert from their research paper
  * <a href="http://citeseer.ist.psu.edu/buchheim02improving.html">
  * Improving Walker's Algorithm to Run in Linear Time</a>, Graph Drawing 2002.

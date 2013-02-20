@@ -14,9 +14,9 @@ import prefuse.visual.NodeItem;
  * This layout places children nodes radially around their parents, and is
  * equivalent to a top-down flattened view of a ConeTree.</p>
  * 
- * <p>The algorithm used is that of G. Melançon and I. Herman from their
+ * <p>The algorithm used is that of G. Melan\c{c}on and I. Herman from their
  * research paper Circular Drawings of Rooted Trees, Reports of the Centre for 
- * Mathematics and Computer Sciences, Report Number INS–9817, 1998.</p>
+ * Mathematics and Computer Sciences, Report Number INS-9817, 1998.</p>
  *
  * @author <a href="http://jheer.org">jeffrey heer</a>
  */
