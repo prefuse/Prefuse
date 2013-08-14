@@ -1285,7 +1285,7 @@ public class Display extends JComponent {
     /**
      * Activity for conducting animated view transformations.
      */
-    private class TransformActivity extends Activity {
+    protected class TransformActivity extends Activity {
         // TODO: clean this up to be more general...
         // TODO: change mechanism so that multiple transform
         //        activities can be running at once?
