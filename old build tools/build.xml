@@ -1,0 +1,311 @@
+<project name="prefuse" default="usage" basedir=".">
+
+  <!-- =================================================================== -->
+  <!-- Initialization target                                               -->
+  <!-- =================================================================== -->
+  <target name="init">
+    <tstamp>
+    	<format property="year" pattern="yyyy" locale="en"/>
+    </tstamp>
+  	
+  	<property file="build.properties"/>
+    <property name="Name" value="prefuse"/>
+    <property name="name" value="prefuse"/>
+    <property name="version" value="beta"/>
+
+    <property name="build.compiler" value="modern"/>
+    <property name="debug" value="off"/>
+    <property name="optimize" value="on"/>
+    <property name="deprecation" value="on"/>
+    <property name="packages" value="prefuse.*"/>
+
+    <!-- Define the source directories -->
+    <property name="root.dir" value="./"/>
+  	<property name="data.dir" value="${root.dir}/data"/>
+  	<property name="demos.dir" value="${root.dir}/demos"/>
+    <property name="doc.dir" value="${root.dir}/doc"/>
+    <property name="lib.dir" value="${root.dir}/lib"/>
+    <property name="src.dir" value="${root.dir}/src"/>
+    <property name="test.dir" value="${root.dir}/test"/>
+
+  	<!-- Define path to required libraries -->
+  	<property name="lucene.lib" value="${root.dir}/lib/lucene-1.4.3.jar"/>
+  	
+    <!-- Define the source build directories -->
+    <property name="doc.apidocs" value="${doc.dir}/api"/>	   	
+    <property name="build.dir" value="${root.dir}/build"/>
+    <property name="build.lib" value="${root.dir}/build/lib"/>
+    <property name="build.prefuse.src" value="${root.dir}/build/prefuse/src"/>
+    <property name="build.prefuse.dest" value="${root.dir}/build/prefuse/classes"/>
+    <property name="build.demos.src" value="${root.dir}/build/demos/src"/>
+    <property name="build.demos.dest" value="${root.dir}/build/demos/classes"/>
+    
+    <!-- Define the distribution directories -->
+    <property name="dist.root" value="${root.dir}/dist"/>
+    <property name="sourcedist.dir" value="${dist.root}/${name}-${version}/"/>
+    <property name="compiledist.dir" value="${dist.root}/${name}-${version}"/>    
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="usage">
+    <echo message=""/>
+    <echo message=""/>
+    <echo message="prefuse build control"/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=" available targets are:"/>
+    <echo message=""/>
+    <echo message="   all        --> builds all the jars in ./build"/>
+    <echo message="   prefuse    --> builds the prefuse.jar file in ./build"/>
+    <echo message="   demos      --> builds the demos.jar file in ./build"/>
+    <echo message="   compiledist--> creates the compiled distribution in ./dist"/>
+    <echo message="   sourcedist --> creates the source distribution in ./dist"/>    
+    <echo message="   api        --> generates prefuse API docs in ./doc/api"/>
+    <echo message="   clean      --> restores distribution to original state"/>
+    <echo message="   usage      --> (default) displays build menu"/>
+    <echo message=""/>
+    <echo message=" See the comments inside the build.xml file for more details."/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=""/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Prepares the build directory                                        -->
+  <!-- =================================================================== -->
+  <target name="prepare" depends="init">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${build.lib}"/>
+
+    <copy todir="${build.lib}">
+      <fileset dir="${lib.dir}"/>
+    </copy>
+
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Prepares the prefuse source code                                    -->
+  <!-- =================================================================== -->
+  <target name="prepare-prefuse" depends="prepare">
+    <mkdir dir="${build.prefuse.src}"/>
+    <mkdir dir="${build.prefuse.dest}"/>
+   
+    <copy todir="${build.prefuse.src}">
+      <fileset dir="${src.dir}"/>
+    </copy>
+         
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Prepares the demos code                                             -->
+  <!-- =================================================================== -->
+  <target name="prepare-demos" depends="prepare">
+    <mkdir dir="${build.demos.src}"/>
+    <mkdir dir="${build.demos.dest}"/>
+
+    <copy todir="${build.demos.src}">
+      <fileset dir="${demos.dir}"/>
+    </copy>
+        
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Compiles the prefuse source code                                    -->
+  <!-- =================================================================== -->
+  <target name="compile-prefuse" depends="prepare-prefuse">
+    <!-- copy resource files -->
+    <copy todir="${build.prefuse.dest}">
+      <fileset dir="${build.prefuse.src}" excludes="**/*.java"/>
+    </copy>
+
+    <javac srcdir="${build.prefuse.src}"
+           destdir="${build.prefuse.dest}"
+    	       classpath="${lucene.lib}"
+           debug="${debug}"
+           deprecation="${deprecation}"
+           optimize="${optimize}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Compiles the demos directory                                        -->
+  <!-- =================================================================== -->
+  <target name="compile-demos" depends="prepare-demos, prefuse">
+    <!-- copy resource files -->
+    <copy todir="${build.demos.dest}">
+      <fileset dir="${build.demos.src}" excludes="**/*.java"/>
+    </copy>
+  	<copy todir="${build.demos.dest}">
+  	  <fileset dir="${data.dir}"/>
+  	</copy>
+
+    <javac srcdir="${build.demos.src}"
+           destdir="${build.demos.dest}"
+		   classpath="${build.dir}/${name}.jar"
+           debug="${debug}"
+           deprecation="${deprecation}"
+           optimize="${optimize}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the prefuse.jar in ./build                                  -->
+  <!-- =================================================================== -->
+  <target name="prefuse" depends="compile-prefuse">
+    <jar jarfile="${build.dir}/${name}.jar"
+         basedir="${build.prefuse.dest}"
+         includes="**"/>
+  	<jar jarfile="${build.dir}/${name}.src.jar"
+  		 basedir="${build.prefuse.src}"
+  		 includes="**"/>
+  </target>
+	
+  <!-- =================================================================== -->
+  <!-- Creates the demos.jar in ./build                                    -->
+  <!-- =================================================================== -->
+  <target name="demos" depends="compile-demos">
+    <jar jarfile="${build.dir}/demos.jar"
+         basedir="${build.demos.dest}"
+         includes="**"/>
+  	<!--manifest="${demos.dir}/prefuse/demos/launcher/demos.manifest"-->
+  </target>
+  
+  <!-- =================================================================== -->
+  <!-- Build all jars in ./build                                           -->
+  <!-- =================================================================== -->
+  <target name="all" depends="prefuse, demos"/>
+
+  <!-- =================================================================== -->
+  <!-- Creates the API documentation in ./doc/api/                         -->
+  <!-- =================================================================== -->
+  <target name="api" depends="prepare-prefuse, prepare-demos">
+    <mkdir dir="${doc.apidocs}"/>
+    <javadoc packagenames="${packages}"
+             sourcepath="${build.prefuse.src}"
+    	     classpath="${lucene.lib}"
+             destdir="${doc.apidocs}"
+             author="true"
+             version="true"
+           	 use="true"
+	         breakiterator="yes"
+             splitindex="true"
+             noindex="false"
+             windowtitle="${Name} API Documentation"
+             doctitle="&lt;font face='Verdana,Arial,sans-serif'>the ${Name} visualization toolkit&lt;/font>"
+             overview="${build.prefuse.src}/prefuse/overview.html"
+             bottom="Copyright &#169; ${year} Regents of the University of California"             
+    />
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Replace all sequences of 4 spaces in .java files with a tab         -->
+  <!-- =================================================================== -->
+  <target name="addTabsWithLength4" depends="init">
+    <fixcrlf 
+         srcdir="${root.dir}"
+         tab="add"
+         tablength="4"
+         includes="**/*.java"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Replace all tabs in .java files with a sequence of 4 spaces         -->
+  <!-- =================================================================== -->
+  <target name="removeTabsWithLength4" depends="init">
+    <fixcrlf 
+         srcdir="${root.dir}"
+         tab="remove"
+         tablength="4"
+         includes="**/*.java"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Build source distribution in ./dist                                 -->
+  <!-- =================================================================== -->
+  <target name="sourcedist" depends="clean">
+    <mkdir dir="${dist.root}"/>
+    <mkdir dir="${sourcedist.dir}"/>
+
+    <copy todir="${sourcedist.dir}">
+      <fileset dir="${root.dir}" excludes="**/.*" />
+    </copy>
+  	<copy todir="${sourcedist.dir}">
+  		<fileset dir="${root.dir}" casesensitive="yes">
+  		  <include name=".project"/>
+  		  <include name=".classpath"/>
+  		</fileset>
+  	</copy>
+
+    <!-- Now delete what we dont want, probably a better way to do this -->
+    <delete dir="${sourcedist.dir}/dist"/>
+  	<delete dir="${sourcedist.dir}/classes"/>
+  	<delete dir="${sourcedist.dir}/build"/>
+  	<delete dir="${sourcedist.dir}/.settings"/>
+
+    <fixcrlf srcdir="${sourcedist.dir}"
+    	eol="lf" eof="remove"
+    	tablength="4" tab="remove"
+        includes="**/*.sh"
+    />
+    <zip zipfile="${dist.root}/${name}-${version}-${DSTAMP}.zip"
+         basedir="${dist.root}"
+         whenempty="create"
+    />
+  </target>
+	
+
+  <!-- =================================================================== -->
+  <!-- Build compiled distribution in ./dist                               -->
+  <!-- =================================================================== -->
+  <target name="compiledist" depends="clean, all, api">
+    <mkdir dir="${dist.root}"/>
+    <mkdir dir="${compiledist.dir}"/>
+
+    <copy todir="${compiledist.dir}">
+      <fileset dir="${root.dir}"/>
+    </copy>
+
+    <!-- Now delete what we dont want, probably a better way to do this -->
+    <delete dir="${compiledist.dir}/dist"/>
+  	<delete dir="${sourcedist.dir}/classes"/>
+    <delete dir="${compiledist.dir}/build/demos"/>
+    <delete dir="${compiledist.dir}/build/prefuse"/>
+  	<delete dir="${compiledist.dir}/build/lib"/>
+
+    <fixcrlf srcdir="${compiledist.dir}"
+       eol="lf" eof="remove"
+       includes="**/*.sh"
+    />
+
+    <zip zipfile="${dist.root}/${name}-${version}-${DSTAMP}-bin.zip"
+         basedir="${dist.root}/${name}-${version}"
+         whenempty="create"
+    />
+
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Clean restores the distribution to original state                   -->
+  <!-- =================================================================== -->
+  <target name="clean" depends="init">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.root}"/>
+    <delete dir="${doc.apidocs}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Fix tabs and line endings on java source files                      -->
+  <!-- =================================================================== -->
+  <target name="fixtabs" depends="init">
+  	<fixcrlf srcdir="${src.dir}" eol="lf" eof="remove"
+  		tablength="4" tab="remove" includes="**/*.java"	/>
+  	<fixcrlf srcdir="${demos.dir}" eol="lf" eof="remove"
+  		tablength="4" tab="remove" includes="**/*.java"	/>
+  	<fixcrlf srcdir="${test.dir}" eol="lf" eof="remove"
+  		tablength="4" tab="remove" includes="**/*.java"	/>
+  </target>
+	
+</project>
+
+<!-- End of file -->
