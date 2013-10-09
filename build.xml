@@ -17,7 +17,11 @@
 		</copy>        
 	</target>
 	
-
+	<target name="-post-compile-single">
+		<copy todir="${build.classes.dir}">
+			<fileset dir="data" includes="**"/>
+		</copy>        
+	</target>
 	
 	<target name="-post-compile-test">
 		<copy todir="${build.classes.dir}">
