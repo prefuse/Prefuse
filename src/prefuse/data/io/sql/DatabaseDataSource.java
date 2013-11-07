@@ -5,12 +5,15 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.logging.Logger;
 
 import prefuse.data.Schema;
 import prefuse.data.Table;
 import prefuse.data.io.DataIOException;
 import prefuse.data.util.Index;
+import prefuse.data.util.TableIterator;
 
 /**
  * Sends queries to a relational database and processes the results, storing
@@ -252,7 +255,19 @@ public class DatabaseDataSource {
         // clock in
         int count = 0;
         long timein = System.currentTimeMillis();
+        
+        boolean tableIsNew = false;
+        HashSet<Integer> rowsToRemove = new HashSet<>();
 
+        if(t!= null)
+        {
+            TableIterator iterator = t.iterator();
+            while (iterator.hasNext()) {
+                Integer row = iterator.nextInt();
+                rowsToRemove.add(row);
+            }
+        }
+        
         try {
             ResultSetMetaData metadata = rset.getMetaData();
             int ncols = metadata.getColumnCount();
@@ -260,6 +275,7 @@ public class DatabaseDataSource {
             // create a new table if necessary
             if ( t == null ) {
                 t = getSchema(metadata, m_handler).instantiate();
+                tableIsNew = true;
                 if ( key != null ) {
                     try {
                         t.index(key);
@@ -282,7 +298,7 @@ public class DatabaseDataSource {
                     if ( row < 0 ) {
                         row = t.addRow();
                     }
-                    
+                    rowsToRemove.remove(row);
                     //process each value in the current row
                     for ( int i=1; i<=ncols; ++i ) {
                         m_handler.process(t, row, rset, i);
@@ -291,6 +307,16 @@ public class DatabaseDataSource {
                 
                 // increment row count
                 ++count;
+            }
+            
+            if(!tableIsNew){
+                // remove all no longer relevant columns
+                Iterator<Integer> iterator = rowsToRemove.iterator();
+                while (iterator.hasNext()) {
+                    Integer integer = iterator.next();
+                    boolean removeRow = t.removeRow(integer);
+                    assert removeRow;
+                }
             }
         } catch ( SQLException e ) {
             throw new DataIOException(e);
