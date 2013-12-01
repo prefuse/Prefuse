@@ -17,12 +17,13 @@ import prefuse.util.collections.IntIterator;
 public class CSVTableWriter extends AbstractTableWriter {
 
     private boolean m_printHeader;
+    private char delimiter = ',';
     
     /**
      * Create a new CSVTableWriter that writes comma separated values files.
      */
     public CSVTableWriter() {
-        this(true);
+        this(true, ',');
     }
     
     /**
@@ -30,7 +31,12 @@ public class CSVTableWriter extends AbstractTableWriter {
      * @param printHeader indicates if a header row should be printed
      */
     public CSVTableWriter(boolean printHeader) {
+        this(printHeader, ',');
+    }
+    
+    public CSVTableWriter(boolean printHeader, char delimiter){
         m_printHeader = printHeader;
+        this.delimiter = delimiter;
     }
 
     // ------------------------------------------------------------------------
@@ -64,7 +70,7 @@ public class CSVTableWriter extends AbstractTableWriter {
             // write out header row
             if ( m_printHeader ) {
                 for ( int i=0; i<table.getColumnCount(); ++i ) {
-                    if ( i>0 ) out.print(',');
+                    if ( i>0 ) out.print(delimiter);
                     out.print(makeCSVSafe(table.getColumnName(i)));
                 }
                 out.println();
@@ -74,7 +80,7 @@ public class CSVTableWriter extends AbstractTableWriter {
             for ( IntIterator rows = table.rows(); rows.hasNext(); ) {
                 int row = rows.nextInt();
                 for ( int i=0; i<table.getColumnCount(); ++i ) {
-                    if ( i>0 ) out.print(',');
+                    if ( i>0 ) out.print(delimiter);
                     String str = table.getString(row, table.getColumnName(i));
                     out.print(makeCSVSafe(str));
                 }
