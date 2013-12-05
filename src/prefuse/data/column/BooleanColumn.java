@@ -145,15 +145,15 @@ public class BooleanColumn extends AbstractColumn {
         // get the previous value
         boolean prev = m_bits.get(row);
 
-        boolean intVal = val >= 1 ? true : false;
+        boolean boolVal = val >= 1 ? true : false;
 
         // exit early if no change
-        if (prev == intVal) {
+        if (prev == boolVal) {
             return;
         }
 
         // set the new value
-        m_bits.set(row, val);
+        m_bits.set(row, boolVal);
 
         // fire a change event
         fireColumnEvent(row, prev);
