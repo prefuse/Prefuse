@@ -11,7 +11,6 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 import prefuse.Constants;
-import prefuse.data.Graph;
 import prefuse.util.ColorLib;
 import prefuse.util.GraphicsLib;
 import prefuse.util.StrokeLib;
@@ -197,8 +196,11 @@ public class EdgeRenderer extends AbstractShapeRenderer {
         NodeItem targetItem = edge.getTargetItem();
         VisualGraph graph = (VisualGraph) edge.getGraph();
         EdgeItem opposingEdge = (EdgeItem) graph.getEdge(targetItem, sourceItem);
-
+        
         if (opposingEdge != null) {
+            if(!opposingEdge.isVisible())
+                return;
+            
             if (mixedEdgeType == MixedGraphEdgeType.Two_Edges) {
                 Rectangle2D sourceNodeBounds = sourceItem.getBounds();
                 Rectangle2D targetNodeBounds = targetItem.getBounds();

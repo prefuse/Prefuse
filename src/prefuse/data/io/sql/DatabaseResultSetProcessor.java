@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.logging.Logger;
 import prefuse.data.Schema;
 import prefuse.data.Table;
+import prefuse.data.Tuple;
 import prefuse.data.io.DataIOException;
 import prefuse.data.util.Index;
 import prefuse.data.util.TableIterator;
@@ -56,13 +57,13 @@ public class DatabaseResultSetProcessor {
         long timein = System.currentTimeMillis();
 
         boolean tableIsNew = false;
-        HashSet<Integer> rowsToRemove = new HashSet<>();
+        HashSet<Tuple> rowsToRemove = new HashSet<>();
 
         if (t != null) {
             TableIterator iterator = t.iterator();
             while (iterator.hasNext()) {
                 Integer row = iterator.nextInt();
-                rowsToRemove.add(row);
+                rowsToRemove.add(t.getTuple(row));
             }
         }
 
@@ -108,10 +109,10 @@ public class DatabaseResultSetProcessor {
 
             if (!tableIsNew && remove) {
                 // remove all no longer relevant columns
-                Iterator<Integer> iterator = rowsToRemove.iterator();
+                Iterator<Tuple> iterator = rowsToRemove.iterator();
                 while (iterator.hasNext()) {
-                    Integer integer = iterator.next();
-                    boolean removeRow = t.removeRow(integer);
+                    Tuple tuple = iterator.next();
+                    boolean removeRow = t.removeTuple(tuple);
                     assert removeRow : "maybe some syncronization problems";
                 }
             }
