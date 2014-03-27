@@ -272,6 +272,7 @@ public abstract class AbstractColumn implements Column {
      * @param type the Class of the data type to check
      * @return true if the type is supported by this column, false otherwise
      */
+    @Override
     public boolean canSet(Class type) {
         if ( type == null ) return false;
         

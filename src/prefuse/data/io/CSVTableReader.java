@@ -9,116 +9,110 @@ import prefuse.data.parser.DataParseException;
 import prefuse.data.parser.ParserFactory;
 
 /**
- * TableReader for Comma Separated Value (CSV) files. CSV files list
- * each row of a table on a line, separating each data column by a line.
- * Typically the first line of the file is a header row indicating the
- * names of each data column.
- * 
+ * TableReader for Comma Separated Value (CSV) files. CSV files list each row of
+ * a table on a line, separating each data column by a line. Typically the first
+ * line of the file is a header row indicating the names of each data column.
+ *
  * For a more in-depth description of the CSV format, please see this
  * <a href="http://www.creativyst.com/Doc/Articles/CSV/CSV01.htm">
- *  CSV reference web page</a>.
- * 
+ * CSV reference web page</a>.
+ *
  * @author <a href="http://jheer.org">jeffrey heer</a>
  */
 public class CSVTableReader extends AbstractTextTableReader {
+
+    private char delimiter;
 
     /**
      * Create a new CSVTableReader.
      */
     public CSVTableReader() {
         super();
+        delimiter = ',';
     }
-    
+
+    public CSVTableReader(char delimiter) {
+        this.delimiter = delimiter;
+    }
+
     /**
      * Create a new CSVTableReader.
+     *
      * @param parserFactory the ParserFactory to use for parsing text strings
      * into table values.
      */
     public CSVTableReader(ParserFactory parserFactory) {
         super(parserFactory);
+        delimiter = ',';
     }
-    
+
+    public CSVTableReader(char delimiter, ParserFactory parserFactory) {
+        super(parserFactory);
+        this.delimiter = delimiter;
+    }
+
     /**
-     * @see prefuse.data.io.AbstractTextTableReader#read(java.io.InputStream, prefuse.data.io.TableReadListener)
+     * @see prefuse.data.io.AbstractTextTableReader#read(java.io.InputStream,
+     * prefuse.data.io.TableReadListener)
      */
     public void read(InputStream is, TableReadListener trl)
-        throws IOException, DataParseException
-    {
+            throws IOException, DataParseException {
         String line;
         StringBuffer sbuf = new StringBuffer();
-        
+
         boolean inRecord = false;
-        int inQuote  = 0;
-        int lineno   = 0;
-        int col      = 0;
-        
+        int inQuote = 0;
+        int lineno = 0;
+        int col = 0;
+
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        while ( (line=br.readLine()) != null ) {
+        while ((line = br.readLine()) != null) {
             // increment the line number
             ++lineno;
-            
+
             // extract the character array for quicker processing
             char[] c = line.toCharArray();
-            int last = c.length-1;
-            
+            int last = c.length - 1;
+
             // iterate through current line
-            for ( int i=0; i<=last; ++i ) {
-                if ( !inRecord ) {
+            for (int i = 0; i <= last; ++i) {
+                if (!inRecord) {
                     // not currently processing a record
-                    if ( Character.isWhitespace(c[i]) )
-                    {
+                    if (Character.isWhitespace(c[i])) {
                         continue;
-                    }
-                    else if ( c[i] == '\"' )
-                    {
+                    } else if (c[i] == '\"') {
                         inRecord = true;
-                        inQuote  = 1;
-                    }
-                    else if ( c[i] == ',' )
-                    {
+                        inQuote = 1;
+                    } else if (c[i] == delimiter) {
                         String s = sbuf.toString().trim();
                         trl.readValue(lineno, ++col, s);
                         sbuf.delete(0, sbuf.length());
-                    }
-                    else
-                    {
+                    } else {
                         inRecord = true;
                         sbuf.append(c[i]);
                     }
                 } else {
                     // in the midst of a record
-                    if ( inQuote == 1 ) {
-                        if ( c[i]=='\"' && (i==last || c[i+1] != '\"') )
-                        {
+                    if (inQuote == 1) {
+                        if (c[i] == '\"' && (i == last || c[i + 1] != '\"')) {
                             // end of quotation
                             inQuote = 2;
-                        }
-                        else if ( c[i]=='\"' )
-                        {
+                        } else if (c[i] == '\"') {
                             // double quote so skip one ahead
                             sbuf.append(c[i++]);
-                        }
-                        else
-                        {
+                        } else {
                             sbuf.append(c[i]);
                         }
                     } else {
-                        if ( Character.isWhitespace(c[i]) )
-                        {
+                        if (Character.isWhitespace(c[i])) {
                             sbuf.append(c[i]);
-                        }
-                        else if ( c[i] != ',' && inQuote == 2 )
-                        {
+                        } else if (c[i] != delimiter && inQuote == 2) {
                             throw new IllegalStateException(
-                                "Invalid data format. " + 
-                                "Error at line " + lineno + ", col " + i);
-                        }
-                        else if ( c[i] != ',' )
-                        {
+                                    "Invalid data format. "
+                                    + "Error at line " + lineno + ", col " + i);
+                        } else if (c[i] != delimiter) {
                             sbuf.append(c[i]);
-                        }
-                        else
-                        {
+                        } else {
                             String s = sbuf.toString().trim();
                             trl.readValue(lineno, ++col, s);
                             sbuf.delete(0, sbuf.length());
@@ -128,17 +122,16 @@ public class CSVTableReader extends AbstractTextTableReader {
                     }
                 }
             }
-            if ( inQuote != 1 ) {
+            if (inQuote != 1) {
                 String s = sbuf.toString().trim();
                 trl.readValue(lineno, ++col, s);
                 sbuf.delete(0, sbuf.length());
                 inQuote = 0;
                 inRecord = false;
             }
-            if ( !inRecord && col > 0 ) {
+            if (!inRecord && col > 0) {
                 col = 0;
             }
         }
     }
-    
 } // end of class CSVTableReader

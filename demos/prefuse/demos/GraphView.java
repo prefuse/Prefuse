@@ -170,9 +170,9 @@ public class GraphView extends JPanel {
         display.addControlListener(new NeighborHighlightControl());
 
         // overview display
-//        Display overview = new Display(vis);
-//        overview.setSize(290,290);
-//        overview.addItemBoundsListener(new FitOverviewListener());
+        Display overview = new Display(m_vis);
+        overview.setSize(290,290);
+        overview.addItemBoundsListener(new FitOverviewListener());
         
         display.setForeground(Color.GRAY);
         display.setBackground(Color.WHITE);
@@ -184,10 +184,10 @@ public class GraphView extends JPanel {
         ForceSimulator fsim = ((ForceDirectedLayout)animate.get(0)).getForceSimulator();
         JForcePanel fpanel = new JForcePanel(fsim);
         
-//        JPanel opanel = new JPanel();
-//        opanel.setBorder(BorderFactory.createTitledBorder("Overview"));
-//        opanel.setBackground(Color.WHITE);
-//        opanel.add(overview);
+        JPanel opanel = new JPanel();
+        opanel.setBorder(BorderFactory.createTitledBorder("Overview"));
+        opanel.setBackground(Color.WHITE);
+        opanel.add(overview);
         
         final JValueSlider slider = new JValueSlider("Distance", 0, hops, hops);
         slider.addChangeListener(new ChangeListener() {
@@ -205,7 +205,7 @@ public class GraphView extends JPanel {
         cf.setBorder(BorderFactory.createTitledBorder("Connectivity Filter"));
         fpanel.add(cf);
 
-        //fpanel.add(opanel);
+        fpanel.add(opanel);
         
         fpanel.add(Box.createVerticalGlue());
         

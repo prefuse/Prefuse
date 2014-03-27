@@ -336,6 +336,10 @@ public class CascadedTable extends Table {
         return ((CascadedRowManager)m_rows).getChildRow(prow);
     }
     
+    public void dispose(){
+        m_parent.removeTableListener(m_listener);
+    }
+    
     // ------------------------------------------------------------------------
     // Row Operations
     
