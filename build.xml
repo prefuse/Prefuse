@@ -126,7 +126,8 @@
     	       classpath="${lucene.lib}"
            debug="${debug}"
            deprecation="${deprecation}"
-           optimize="${optimize}"/>
+           optimize="${optimize}"
+           encoding="cp1252"/>
   </target>
 
   <!-- =================================================================== -->
