@@ -18,11 +18,11 @@ import prefuse.data.util.Index;
 import prefuse.data.util.TableIterator;
 
 /**
- * Is responible fpr processing a ResultSet and transfering
- * it into a Prefuse-Table.
- * 
+ * Is responible fpr processing a ResultSet and transfering it into a
+ * Prefuse-Table.
+ *
  * Is just a refactoring of the <code>DatabaseDataSource</code>.
- * 
+ *
  * @author Sascha Thielemann
  */
 public class DatabaseResultSetProcessor {
@@ -31,8 +31,8 @@ public class DatabaseResultSetProcessor {
     protected SQLDataHandler m_handler;
 
     /**
-     * Creates a new DatabaseResultSetProcessor for reading data from a SQL relational
-     * database. 
+     * Creates a new DatabaseResultSetProcessor for reading data from a SQL
+     * relational database.
      */
     public DatabaseResultSetProcessor(SQLDataHandler handler) {
         m_handler = handler;
@@ -45,8 +45,8 @@ public class DatabaseResultSetProcessor {
      *
      * @param t the Table to store results in
      * @param rset the SQL query result set
-     * @param remove decides of rows which have no counterpart in the ResultSet 
-     *               should get removed
+     * @param remove decides of rows which have no counterpart in the ResultSet
+     * should get removed
      * @param lock object used for syncronization
      * @return a Table containing the query results
      */
@@ -92,6 +92,7 @@ public class DatabaseResultSetProcessor {
             while (rset.next()) {
                 synchronized (lock) {
                     // determine the table row index to use
+
                     int row = getExistingRow(t, rset, key);
                     if (row < 0) {
                         row = t.addRow();
@@ -99,7 +100,9 @@ public class DatabaseResultSetProcessor {
                     rowsToRemove.remove(row);
                     //process each value in the current row
                     for (int i = 1; i <= ncols; ++i) {
-                        m_handler.process(t, row, rset, i);
+                        if (0 <= t.getColumnNumber(rset.getMetaData().getCatalogName(i))) {
+                            m_handler.process(t, row, rset, i);
+                        }
                     }
                 }
 
