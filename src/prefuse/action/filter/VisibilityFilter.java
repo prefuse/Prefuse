@@ -56,7 +56,7 @@ public class VisibilityFilter extends GroupAction {
      */
     protected void setPredicate(Predicate p) {
         m_predicate = p;
-        m_filter = new OrPredicate(p, VisiblePredicate.TRUE);
+        m_filter = new OrPredicate(p, VisiblePredicate.getTruePredicate());
     }
     
     /**

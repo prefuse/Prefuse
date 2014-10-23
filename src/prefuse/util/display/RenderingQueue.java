@@ -33,7 +33,7 @@ public class RenderingQueue {
     // buffer queues for use in sorting, these prevent continual re-allocation
     transient static VisualItem[] items_buf;
     transient static int[]        scores_buf;
-    
+
     /**
      * Clear both rendering and picking queues.
      */
@@ -122,6 +122,9 @@ public class RenderingQueue {
         }
         // now sort
         ArrayLib.sort(scores, items, scores_buf, items_buf, 0, size);
+
+        // clean up the temp buffer from object references
+        Arrays.fill(items_buf, null);
     }
     
 } // end of class RenderingQueue

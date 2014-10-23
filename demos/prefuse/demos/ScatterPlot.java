@@ -61,11 +61,11 @@ public class ScatterPlot extends Display {
         
         // set up the actions
         AxisLayout x_axis = new AxisLayout(group, xfield, 
-                Constants.X_AXIS, VisiblePredicate.TRUE);
+                Constants.X_AXIS, VisiblePredicate.getTruePredicate());
         m_vis.putAction("x", x_axis);
         
         AxisLayout y_axis = new AxisLayout(group, yfield, 
-                Constants.Y_AXIS, VisiblePredicate.TRUE);
+                Constants.Y_AXIS, VisiblePredicate.getTruePredicate());
         m_vis.putAction("y", y_axis);
 
         ColorAction color = new ColorAction(group, 

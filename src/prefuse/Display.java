@@ -421,9 +421,9 @@ public class Display extends JComponent {
      */
     public synchronized void setPredicate(Predicate p) {
         if ( p == null ) {
-            m_predicate.set(VisiblePredicate.TRUE);
+            m_predicate.set(VisiblePredicate.getTruePredicate());
         } else {
-            m_predicate.set(new Predicate[] {p, VisiblePredicate.TRUE});
+            m_predicate.set(new Predicate[] {p, VisiblePredicate.getTruePredicate()});
         }
     }
     
