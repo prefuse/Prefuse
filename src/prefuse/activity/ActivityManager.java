@@ -187,7 +187,11 @@ public class ActivityManager extends Thread {
      */
     private void _schedule(Activity a, long startTime) {
         if ( a.isScheduled() ) {
-        	try { notifyAll(); } catch ( Exception e ) {}
+        	try { 
+        	    synchronized( this ) {
+        	        notifyAll(); 
+        	    }
+        	} catch ( Exception e ) {}
             return; // already scheduled, do nothing
         }
         a.setStartTime(startTime);
