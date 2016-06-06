@@ -73,13 +73,13 @@ public class KeywordSearchTupleSet extends SearchTupleSet {
         if ( query == null )
             query = "";
         
+        query = query.trim();
         if ( query.equals(m_query) )
             return; // no change
         
         Tuple[] rem = clearInternal();
         m_query = query;
         
-        query.trim();
         if ( query.length() == 0 ) {
             this.fireTupleEvent(null, DELETE);
             return;
