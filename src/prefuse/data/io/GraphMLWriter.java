@@ -84,8 +84,16 @@ public class GraphMLWriter extends AbstractGraphWriter {
         xml.println();
         
         // print graph contents
-        xml.start(Tokens.GRAPH, Tokens.EDGEDEF,
-            graph.isDirected() ? Tokens.DIRECTED : Tokens.UNDIRECTED);
+        Object graphID = graph.getClientProperty(Tokens.ID);
+        if (graphID == null) {
+            xml.start(Tokens.GRAPH, Tokens.EDGEDEF, graph.isDirected() ? Tokens.DIRECTED : Tokens.UNDIRECTED);
+        }
+        else {
+            xml.start(Tokens.GRAPH,
+                new String[] { Tokens.EDGEDEF, Tokens.ID },
+                new String[] { graph.isDirected() ? Tokens.DIRECTED : Tokens.UNDIRECTED, graphID.toString() },
+                2 );
+        }
         
         // print the nodes
         xml.comment("nodes");
