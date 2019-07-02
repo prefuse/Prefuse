@@ -64,4 +64,4 @@ selecting "Run >> Java Application" from the menu.
 
 Additional information and documentation, a help forum, a gallery of featured
 prefuse applications, and more, are available online. Point your web browser at
- -- http://prefuse.org --
+ <https://web.archive.org/web/20181215222711/http://prefuse.org/>
