@@ -281,8 +281,10 @@ public class Graph extends CompositeTupleSet {
         }
         
         // set up tuple manager
-        if ( m_nodeTuples == null )
+        if ( m_nodeTuples == null ) {
             m_nodeTuples = new TupleManager(nodes, this, TableNode.class);
+            nodes.setTupleManager(m_nodeTuples);
+        }
         m_edgeTuples = new TupleManager(edges, this, TableEdge.class);
         
         // set up node attribute optimization
