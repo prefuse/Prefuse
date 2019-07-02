@@ -153,6 +153,13 @@ public class FisheyeTreeFilter extends GroupAction {
             VisualItem item = (VisualItem)items.next();
             if ( item.getDOI() == Constants.MINIMUM_DOI )
                 PrefuseLib.updateVisible(item, false);
+            else {
+            	EdgeItem e =(EdgeItem) ((NodeItem)item).getParentEdge();
+            	if (e != null) {
+            		e.setDOI(item.getDOI());
+                    PrefuseLib.updateVisible(e, true);
+            	}
+            }
         }
     }
 
@@ -175,12 +182,6 @@ public class FisheyeTreeFilter extends GroupAction {
         PrefuseLib.updateVisible(n, true);
         double localDOI = -ldist / Math.min(1000.0, m_divisor);
         n.setDOI(doi+localDOI);
-        
-        if ( c != null ) {
-            EdgeItem e = (EdgeItem)c.getParentEdge();
-            e.setDOI(c.getDOI());
-            PrefuseLib.updateVisible(e, true);
-        }
     }
     
     /**
