@@ -1,7 +1,11 @@
-prefuse README
+prefuse
+=======
 beta release - initial release february 2006, current release 2007.10.20
 
---INTRO--
+This repository was initially created from the release available at http://downloads.sourceforge.net/prefuse/prefuse-beta-20071021.zip
+
+INTRO
+-----
 
 prefuse is a Java-based toolkit for building interactive information
 visualization applications. Prefuse supports a rich set of features for data
@@ -10,13 +14,18 @@ structures for tables, graphs, and trees, a host of layout and visual encoding
 techniques, and support for animation, dynamic queries, integrated search, and
 database connectivity. Prefuse is written in Java, using the Java 2D graphics
 library, and is easily integrated into Java Swing applications or web applets.
-Prefuse is licensed under the terms of a BSD license, and can be freely used
-for both commercial and non-commercial purposes.
 
---STRUCTURE--
+Prefuse is a creation of the UC Berkeley Visualization Lab <http://vis.berkeley.edu/>.
+Prefuse is licensed under the terms of a 
+[BSD license](https://github.com/prefuse/Prefuse/blob/master/license-prefuse.txt), 
+and can be freely used for both commercial and non-commercial purposes.
+
+STRUCTURE
+---------
 
 The toolkit distribution uses the following organization:
 
+```
 + prefuse
 |-- build  Directory where compiled classes and jar files are placed
 |-- data   Various example data files used by the demo applications
@@ -25,30 +34,33 @@ The toolkit distribution uses the following organization:
 |-- lib    Third-party libraries useful with prefuse and their licenses
 |-- src    The source code for the prefuse toolkit
 |-- test   JUnit tests for the toolkit (still a bit sparse at the moment)
+```
 
---REQUIREMENTS--
+REQUIREMENTS
+------------
 
 prefuse is written in Java 1.4, using the Java2D graphics library. To compile
 the prefuse code, and to build and run prefuse applications, you'll need a
 copy of the Java Development Kit (JDK) for version 1.4.2 or greater. You can
 download the most recent version of the JDK from
-http://java.sun.com/j2se/1.5.0/download.html.
+<http://java.sun.com/j2se/1.5.0/download.html>.
 
 We also recommended (though by no means is it required) that you use an
-Integrated Development Environment such as Eclipse (http://eclipse.org).
+Integrated Development Environment such as Eclipse (<http://eclipse.org>).
 Especially if you are a Java novice, it will likely make your life much easier.
 
---BUILDING--
+BUILDING
+--------
 
 prefuse uses the Ant system from the Apache Group to compile the files. Ant is
-bundled with this distribution, and can be run using the "build.bat" script
-(in Windows) or the "build.sh" script (in UNIX). For example, running
-"build.bat usage" will provide a list of available commands, "build.bat all"
-will compile the toolkit and demos into jar files, running "build.bat api"
+bundled with this distribution, and can be run using the `build.bat` script
+(in Windows) or the `build.sh` script (in UNIX). For example, running
+`build.bat usage` will provide a list of available commands, `build.bat all`
+will compile the toolkit and demos into jar files, running `build.bat api`
 will generate the html API documentation for the toolkit in the doc directory.
 
 Alternatively, you can use the Eclipse integrated development environment
-(available for free at http://ww.eclipse.org) to load the source files, then
+(available for free at <http://ww.eclipse.org>) to load the source files, then
 Eclipse will compile the software for you. Within Eclipse, right-click the
 background of the "Package Explorer" panel and choose "Import". Then select
 "Existing Projects into Workspace". In resulting dialog, click the radio
@@ -60,8 +72,15 @@ can then run various demos directly from within Eclipse by right-clicking the
 class file for a demo (e.g., demos/prefuse.demos.GraphView.java) and
 selecting "Run >> Java Application" from the menu.
 
---MORE--
+MORE
+----
 
-Additional information and documentation, a help forum, a gallery of featured
-prefuse applications, and more, are available online. Point your web browser at
- <https://web.archive.org/web/20181215222711/http://prefuse.org/>
+Additional information and preliminary documentation, a gallery of featured
+prefuse applications, and more, were available at the prefuse website, which is no longer available since 2018.
+A snapshot can be found at <https://web.archive.org/web/20181215222711/http://prefuse.org/>.
+
+SourceForge hosts a help forum: <https://sourceforge.net/p/prefuse/discussion/343013/>
+
+StackOverflow questions: <https://stackoverflow.com/questions/tagged/prefuse>
+
+Academic publication by the initial developers: <http://doi.acm.org/10.1145/1054972.1055031>  
