@@ -2,6 +2,7 @@ Prefuse is a set of software tools for creating rich interactive data visualizat
 
 Prefuse is written in Java, using the Java 2D graphics library, and is easily integrated into Java Swing applications or web applets. Prefuse is licensed under the terms of a BSD license, and can be freely used for both commercial and non-commercial purposes.
 
-Prefuse is a creation of the UC Berkeley Visualization Lab http://vis.berkeley.edu/. For more information see license-prefuse.txt. 
+Prefuse is a creation of the UC Berkeley Visualization Lab http://vis.berkeley.edu/. For more information see license-prefuse.txt.
+The prefuse website with preliminary documentation is no longer available since 2019; a recent snapshot can be found at https://web.archive.org/web/20181215222711/http://prefuse.org/  
 
 This repository was initially created from the release available at http://downloads.sourceforge.net/prefuse/prefuse-beta-20071021.zip
