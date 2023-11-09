@@ -53,8 +53,8 @@ public class FunctionTable {
         addFunction("LOG2", Log2Function.class);
         addFunction("LOG10", Log10Function.class);
         addFunction("MAX", MaxFunction.class);
-        addFunction("MIN", MaxFunction.class);
-        addFunction("MOD", MaxFunction.class);
+        addFunction("MIN", MinFunction.class);
+        addFunction("MOD", ModFunction.class);
         addFunction("PI", PiFunction.class);
         addFunction("POW", PowFunction.class);
         addFunction("POWER", PowFunction.class);
