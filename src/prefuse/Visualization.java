@@ -936,7 +936,7 @@ public class Visualization {
      * @return an iterator over all visible items.
      */
     public Iterator visibleItems() {
-        return items(VisiblePredicate.TRUE);
+        return items(VisiblePredicate.getTruePredicate());
     }
     
     /**
@@ -945,7 +945,7 @@ public class Visualization {
      * @return an iterator over all visible items in the specified group
      */
     public Iterator visibleItems(String group) {
-        return items(group, VisiblePredicate.TRUE);
+        return items(group, VisiblePredicate.getTruePredicate());
     }
     
     /**

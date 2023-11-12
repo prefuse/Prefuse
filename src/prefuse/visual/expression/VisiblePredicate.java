@@ -1,5 +1,7 @@
 package prefuse.visual.expression;
 
+import java.lang.ref.WeakReference;
+
 import prefuse.data.expression.ColumnExpression;
 import prefuse.data.expression.Expression;
 import prefuse.data.expression.Function;
@@ -12,15 +14,35 @@ import prefuse.visual.VisualItem;
  * 
  * @author <a href="http://jheer.org">jeffrey heer</a>
  */
-public class VisiblePredicate extends ColumnExpression
-    implements Predicate, Function
-{
+public class VisiblePredicate extends ColumnExpression implements Predicate, Function {
 
-    /** Convenience instance for the visible == true case. */
-    public static final Predicate TRUE = new VisiblePredicate();
-    /** Convenience instance for the visible == false case. */
-    public static final Predicate FALSE = new NotPredicate(TRUE);
-    
+    private static WeakReference TRUE_REFERENCE;
+    private static WeakReference FALSE_REFERENCE;
+
+    public static synchronized Predicate getTruePredicate() {
+        if (TRUE_REFERENCE != null) {
+            Object item = TRUE_REFERENCE.get();
+            if (item instanceof Predicate) {
+                return (Predicate) item;
+            }
+        }
+        VisiblePredicate TRUE = new VisiblePredicate();
+        TRUE_REFERENCE = new WeakReference(TRUE);
+        return TRUE;
+    }
+
+    public static synchronized Predicate getFalsePredicate() {
+        if (FALSE_REFERENCE != null) {
+            Object item = FALSE_REFERENCE.get();
+            if (item instanceof Predicate) {
+                return (Predicate) item;
+            }
+        }
+        Predicate FALSE = new NotPredicate(getTruePredicate());
+        TRUE_REFERENCE = new WeakReference(FALSE);
+        return FALSE;
+    }
+
     /**
      * Create a new VisiblePredicate.
      */
@@ -48,12 +70,12 @@ public class VisiblePredicate extends ColumnExpression
     public int getParameterCount() {
         return 0;
     }
-    
+
     /**
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return getName()+"()";
+        return getName() + "()";
     }
 
 } // end of class VisiblePredicate

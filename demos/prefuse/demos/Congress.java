@@ -157,9 +157,9 @@ public class Congress extends JPanel {
         
         // set up the actions
         AxisLayout xaxis = new AxisLayout(group, "State Code",
-                Constants.X_AXIS, VisiblePredicate.TRUE); 
+                Constants.X_AXIS, VisiblePredicate.getTruePredicate()); 
         AxisLayout yaxis = new AxisLayout(group, RECEIPTS,
-                Constants.Y_AXIS, VisiblePredicate.TRUE);
+                Constants.Y_AXIS, VisiblePredicate.getTruePredicate());
         //yaxis.setScale(Constants.LOG_SCALE);
         yaxis.setRangeModel(receiptsQ.getModel());
         receiptsQ.getNumberModel().setValueRange(0,65000000,0,65000000);

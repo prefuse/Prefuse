@@ -60,7 +60,7 @@ public abstract class ItemAction extends GroupAction {
      * @param group the name of the group to process
      */
     public ItemAction(Visualization vis, String group) {
-        this(vis, group, VisiblePredicate.TRUE);
+        this(vis, group, VisiblePredicate.getTruePredicate());
     }
 
     /**
