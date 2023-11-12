@@ -123,11 +123,13 @@
 
     <javac srcdir="${build.prefuse.src}"
            destdir="${build.prefuse.dest}"
-    	       classpath="${lucene.lib}"
+    	     classpath="${lucene.lib}"
            debug="${debug}"
            deprecation="${deprecation}"
            optimize="${optimize}"
-           encoding="cp1252"/>
+           encoding="cp1252"
+           target="1.6"
+           source="1.6"/>
   </target>
 
   <!-- =================================================================== -->
@@ -144,7 +146,7 @@
 
     <javac srcdir="${build.demos.src}"
            destdir="${build.demos.dest}"
-		   classpath="${build.dir}/${name}.jar"
+		       classpath="${build.dir}/${name}.jar"
            debug="${debug}"
            deprecation="${deprecation}"
            optimize="${optimize}"/>
