@@ -151,6 +151,15 @@ public class DataColorAction extends ColorAction {
     public int getScale() {
         return m_scale;
     }
+
+    /**
+     * Set the palette this DataColorAction uses to assign colors.
+     * @param array of RGB values
+     */
+    public void setPalette(int[] palette) {
+        m_palette = palette;
+        setup();
+    }
     
     /**
      * Set the scale (linear, square root, or log) to use for encoding color

@@ -151,7 +151,7 @@ public class AxisRenderer extends AbstractShapeRenderer {
 	    	String str = item.getString(VisualItem.LABEL); 
 	    	AffineTransform origTransform = g.getTransform();
 	    	AffineTransform transform = this.getTransform(item);
-	    	if ( transform != null ) g.setTransform(transform);
+	    	if ( transform != null ) g.transform(transform);
 	    		
 	    	g.setFont(item.getFont()); 
 	    	g.setColor(ColorLib.getColor(item.getTextColor())); 

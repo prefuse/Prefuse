@@ -124,7 +124,7 @@
     <javac srcdir="${build.prefuse.src}"
            destdir="${build.prefuse.dest}"
     	       classpath="${lucene.lib}"
-           debug="${debug}"
+           debug="true" debuglevel="lines,vars,source"
            deprecation="${deprecation}"
            optimize="${optimize}"
            encoding="cp1252"/>
